@@ -18,21 +18,23 @@ function getComputerChoice() {
 console.log(compChoice)
  
 
-    let userChoice = prompt("Enter a selection: Rock, Paper, or Scissors.");
+    let input = prompt("Enter a selection: Rock, Paper, or Scissors.");
+    let userChoice = input.charAt(0).toUpperCase() + input.slice(1);
+    
 
     if (userChoice == compChoice) {
         alert("Tie")
-    } else if ((userChoice == 'rock' || 'Rock') && (compChoice == 'Scissors')) {
+    } else if (( userChoice == 'Rock') && (compChoice == 'Scissors')) {
         alert("Rock beats Scissors! YOU WIN!")
-    } else if ((userChoice == 'rock' || 'Rock') && (compChoice == 'Paper')) {
+    } else if (( userChoice == 'Rock') && (compChoice == 'Paper')) {
         alert("Paper beats Rock! YOU LOSE!")
-    } else if ((userChoice == 'paper' || 'Paper') && (compChoice == 'Rock')) {
+    } else if (( userChoice == 'Paper') && (compChoice == 'Rock')) {
         alert("Paper beats Rock! YOU WIN!")
-    } else if ((userChoice == 'paper' || 'Paper') && (compChoice == 'Scissors')) {
+    } else if (( userChoice == 'Paper') && (compChoice == 'Scissors')) {
         alert("Scissors beats Paper! YOU LOSE!")
-    } else if ((userChoice == 'scissors' || 'Scissors') && (compChoice == 'Rock')) {
+    } else if (( userChoice == 'Scissors') && (compChoice == 'Rock')) {
         alert("Rock beats Scissors! YOU LOSE!")
-    } else if ((userChoice == 'scissors' || 'Scissors') && (compChoice == 'Paper')) {
+    } else if (( userChoice == 'Scissors') && (compChoice == 'Paper')) {
         alert("Scissors beats Paper! YOU WIN!") 
     }
 }
