@@ -22,18 +22,18 @@ console.log(compChoice)
 
     if (userChoice == compChoice) {
         alert("Tie")
-    } else if ((userChoice == 'rock') && (compChoice == 'Scissors')) {
+    } else if ((userChoice == 'rock' || 'Rock') && (compChoice == 'Scissors')) {
         alert("Rock beats Scissors! YOU WIN!")
-    } else if ((userChoice == 'rock') && (compChoice == 'Paper')) {
+    } else if ((userChoice == 'rock' || 'Rock') && (compChoice == 'Paper')) {
         alert("Paper beats Rock! YOU LOSE!")
-    } else if ((userChoice == 'paper') && (compChoice == 'rock')) {
+    } else if ((userChoice == 'paper' || 'Paper') && (compChoice == 'Rock')) {
         alert("Paper beats Rock! YOU WIN!")
-    } else if ((userChoice == 'paper') && (compChoice == 'scissors')) {
+    } else if ((userChoice == 'paper' || 'Paper') && (compChoice == 'Scissors')) {
         alert("Scissors beats Paper! YOU LOSE!")
-    } else if ((userChoice == 'scissors') && (compChoice == 'rock')) {
+    } else if ((userChoice == 'scissors' || 'Scissors') && (compChoice == 'Rock')) {
         alert("Rock beats Scissors! YOU LOSE!")
-    }else if ((userChoice == 'scissors') && (compChoice == 'paper')) {
-        alert("Scissor beat Paper! YOU WIN!") 
+    } else if ((userChoice == 'scissors' || 'Scissors') && (compChoice == 'Paper')) {
+        alert("Scissors beats Paper! YOU WIN!") 
     }
 }
 
