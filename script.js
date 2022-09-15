@@ -57,8 +57,6 @@ function playRound() {
 
 function game() {
 
-    
-
     while ((userScore < 5) && (compScore < 5)) {
 
         playRound();
@@ -66,6 +64,12 @@ function game() {
 console.log(userScore);
 console.log(compScore);
 console.log(round);
+}
+
+if (userScore == 5) {
+    alert ("Game over. You WIN! Refresh page to play again")
+} else if (compScore == 5) {
+    alert("Game over. You LOSE! Refresh pge to play again")
 }
 }
 game()
