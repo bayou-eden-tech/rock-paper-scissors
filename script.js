@@ -12,31 +12,60 @@ function getComputerChoice() {
             compChoice = "Paper";
             break;
         case 2:
-            compChoice = "Scissors"
+            compChoice = "Scissors";
+            break;
     }
+    return compChoice;
 
-console.log(compChoice)
+}
  
+let userScore = 0
+let compScore = 0
+let round = 1
 
+function playRound() {
     let input = prompt("Enter a selection: Rock, Paper, or Scissors.");
-    let userChoice = input.charAt(0).toUpperCase() + input.slice(1);
+    let userChoice = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    let compChoice = getComputerChoice();
     
 
+    console.log(compChoice);
+
     if (userChoice == compChoice) {
-        alert("Tie")
-    } else if (( userChoice == 'Rock') && (compChoice == 'Scissors')) {
-        alert("Rock beats Scissors! YOU WIN!")
-    } else if (( userChoice == 'Rock') && (compChoice == 'Paper')) {
-        alert("Paper beats Rock! YOU LOSE!")
-    } else if (( userChoice == 'Paper') && (compChoice == 'Rock')) {
-        alert("Paper beats Rock! YOU WIN!")
-    } else if (( userChoice == 'Paper') && (compChoice == 'Scissors')) {
-        alert("Scissors beats Paper! YOU LOSE!")
-    } else if (( userChoice == 'Scissors') && (compChoice == 'Rock')) {
-        alert("Rock beats Scissors! YOU LOSE!")
-    } else if (( userChoice == 'Scissors') && (compChoice == 'Paper')) {
-        alert("Scissors beats Paper! YOU WIN!") 
+        alert("Tie");
+        round++;
+    } else if ((( userChoice == 'Rock') && (compChoice == 'Scissors')) || 
+              (( userChoice == 'Paper') && (compChoice == 'Rock')) ||
+              (( userChoice == 'Scissors') && (compChoice == 'Paper'))) {
+        alert(`${userChoice} beats ${compChoice}! YOU WIN!`);
+        round++;
+        userScore += 1;
+    } else if ((( userChoice == 'Rock') && (compChoice == 'Paper')) ||
+              (( userChoice == 'Paper') && (compChoice == 'Scissors')) ||
+              (( userChoice == 'Scissors') && (compChoice == 'Rock'))) {
+        alert(`${compChoice} beats ${userChoice}! YOU LOSE!`);
+        round++;
+        compScore++;
+    } else if ( userChoice == "Dynamite" || userChoice == "Grenade") {
+        alert("***FINISHER MOVE*** YOU WIN!");
+        round++;
+        userScore++;
+    } else {
+        alert("Invalid input")
     }
 }
 
-getComputerChoice()
+function game() {
+
+    
+
+    while ((userScore < 5) && (compScore < 5)) {
+
+        playRound();
+    
+console.log(userScore);
+console.log(compScore);
+console.log(round);
+}
+}
+game()
